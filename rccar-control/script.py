@@ -18,17 +18,17 @@ IC2B   = 22
 def setup():
     webiopi.debug("Script with macros - Setup")
 
-	# Setup GPIOs
-	GPIO.setFunction(IC1A, GPIO.OUT)
-	GPIO.setFunction(IC1B, GPIO.OUT)
-	GPIO.setFunction(IC2A, GPIO.OUT)
-	GPIO.setFunction(IC2B, GPIO.OUT)
+    # Setup GPIOs
+    GPIO.setFunction(IC1A, GPIO.OUT)
+    GPIO.setFunction(IC1B, GPIO.OUT)
+    GPIO.setFunction(IC2A, GPIO.OUT)
+    GPIO.setFunction(IC2B, GPIO.OUT)
 
-	# Initialze Output Value
-	GPIO.digitalWrite(IC1A, GPIO.LOW)
-	GPIO.digitalWrite(IC1B, GPIO.LOW)
-	GPIO.digitalWrite(IC2A, GPIO.LOW)
-	GPIO.digitalWrite(IC2B, GPIO.LOW)
+    # Initialze Output Value
+    GPIO.digitalWrite(IC1A, GPIO.LOW)
+    GPIO.digitalWrite(IC1B, GPIO.LOW)
+    GPIO.digitalWrite(IC2A, GPIO.LOW)
+    GPIO.digitalWrite(IC2B, GPIO.LOW)
 
 # Looped by WebIOPi
 def loop():
@@ -39,35 +39,35 @@ def loop():
 def destroy():
     webiopi.debug("Script with macros - Destroy")
     # Reset GPIO functions
-	GPIO.setFunction(IC1A, GPIO.IN)
-	GPIO.setFunction(IC1B, GPIO.IN)
-	GPIO.setFunction(IC2A, GPIO.IN)
-	GPIO.setFunction(IC2B, GPIO.IN)
+    GPIO.setFunction(IC1A, GPIO.IN)
+    GPIO.setFunction(IC1B, GPIO.IN)
+    GPIO.setFunction(IC2A, GPIO.IN)
+    GPIO.setFunction(IC2B, GPIO.IN)
 
 # A macro without args which return nothing
 @webiopi.macro
 def MotorLeft():
-	GPIO.digitalWrite(IC1A, GPIO.HIGH)
-	GPIO.digitalWrite(IC1B, GPIO.LOW)
+    GPIO.digitalWrite(IC1A, GPIO.HIGH)
+    GPIO.digitalWrite(IC1B, GPIO.LOW)
 
 @webiopi.macro
 def MotorRight():
-	GPIO.digitalWrite(IC1A, GPIO.LOW)
-	GPIO.digitalWrite(IC1B, GPIO.HIGH)
+    GPIO.digitalWrite(IC1A, GPIO.LOW)
+    GPIO.digitalWrite(IC1B, GPIO.HIGH)
 
 @webiopi.macro
 def MoveForward():
-	GPIO.digitalWrite(IC2A, GPIO.HIGH)
-	GPIO.digitalWrite(IC2B, GPIO.LOW)
+    GPIO.digitalWrite(IC2A, GPIO.HIGH)
+    GPIO.digitalWrite(IC2B, GPIO.LOW)
 
 @webiopi.macro
 def MoveBackward():
-	GPIO.digitalWrite(IC2A, GPIO.LOW)
-	GPIO.digitalWrite(IC2B, GPIO.HIGH)
+    GPIO.digitalWrite(IC2A, GPIO.LOW)
+    GPIO.digitalWrite(IC2B, GPIO.HIGH)
 
 @webiopi.macro
 def Stop():
-	GPIO.digitalWrite(IC1A, GPIO.LOW)
-	GPIO.digitalWrite(IC1B, GPIO.LOW)
-	GPIO.digitalWrite(IC2A, GPIO.LOW)
-	GPIO.digitalWrite(IC2B, GPIO.LOW)
+    GPIO.digitalWrite(IC1A, GPIO.LOW)
+    GPIO.digitalWrite(IC1B, GPIO.LOW)
+    GPIO.digitalWrite(IC2A, GPIO.LOW)
+    GPIO.digitalWrite(IC2B, GPIO.LOW)
