@@ -10,20 +10,20 @@
 		var button;
 		content = $("#content");
 		
-		button = webiopi().createMacroButton("macro", "<", "MoveLeft");
-		$("#middle").append(button); // append button to middle div
+		button = webiopi().createMacroButton("macro", "LEFT", "MoveLeft");
+		$("#middle").append(button);
 
-		button = webiopi().createMacroButton("macro", "X", "Stop");
-		$("#middle").append(button); // append button to middle div
+		button = webiopi().createMacroButton("macro", "STOP", "Stop");
+		$("#middle").append(button);
 
-		button = webiopi().createMacroButton("macro", ">", "MoveRight");
-		$("#middle").append(button); // append button to middle div
+		button = webiopi().createMacroButton("macro", "RIGHT", "MoveRight");
+		$("#middle").append(button);
 
-		button = webiopi().createMacroButton("macro", "/\\", "MoveForward");
-		$("#up").append(button); // append button to up div
+		button = webiopi().createMacroButton("macro", "FORWARD", "MoveForward");
+		$("#up").append(button);
 
-		button = webiopi().createMacroButton("macro", "\\/", "MoveBackward");
-		$("#down").append(button); // append button to down div
+		button = webiopi().createMacroButton("macro", "BACKWARD", "MoveBackward");
+		$("#down").append(button);
 
 		webiopi().refreshGPIO(true);
 	});
@@ -33,7 +33,7 @@
 		button {
 			display: block;
 			margin: 5px 5px 5px 5px;
-			width: 160px;
+			width: 200px;
 			height: 45px;
 			font-size: 24pt;
 			font-weight: bold;

@@ -9,10 +9,10 @@ webiopi.setDebug()
 GPIO = webiopi.GPIO
 
 # GPIO No.
-IC1A   = 4
-IC1B   = 17
-IC2A   = 27
-IC2B   = 22
+IC1A   = 17
+IC1B   = 27
+IC2A   = 23
+IC2B   = 24
 
 # Called by WebIOPi at script loading
 def setup():
@@ -46,28 +46,32 @@ def destroy():
 
 # A macro without args which return nothing
 @webiopi.macro
-def MotorLeft():
+def MoveLeft():
     GPIO.digitalWrite(IC1A, GPIO.HIGH)
     GPIO.digitalWrite(IC1B, GPIO.LOW)
 
 @webiopi.macro
-def MotorRight():
+def MoveRight():
     GPIO.digitalWrite(IC1A, GPIO.LOW)
     GPIO.digitalWrite(IC1B, GPIO.HIGH)
 
 @webiopi.macro
 def MoveForward():
+    GPIO.digitalWrite(IC1A, GPIO.LOW)
+    GPIO.digitalWrite(IC1B, GPIO.LOW)
     GPIO.digitalWrite(IC2A, GPIO.HIGH)
     GPIO.digitalWrite(IC2B, GPIO.LOW)
 
 @webiopi.macro
 def MoveBackward():
+    GPIO.digitalWrite(IC1A, GPIO.LOW)
+    GPIO.digitalWrite(IC1B, GPIO.LOW)
     GPIO.digitalWrite(IC2A, GPIO.LOW)
     GPIO.digitalWrite(IC2B, GPIO.HIGH)
 
 @webiopi.macro
 def Stop():
-    GPIO.digitalWrite(IC1A, GPIO.LOW)
-    GPIO.digitalWrite(IC1B, GPIO.LOW)
+    #GPIO.digitalWrite(IC1A, GPIO.LOW)
+    #GPIO.digitalWrite(IC1B, GPIO.LOW)
     GPIO.digitalWrite(IC2A, GPIO.LOW)
     GPIO.digitalWrite(IC2B, GPIO.LOW)
