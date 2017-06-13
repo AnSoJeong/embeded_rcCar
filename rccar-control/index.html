@@ -10,19 +10,19 @@
 		var button;
 		content = $("#content");
 		
-		button = webiopi().createMacroButton("macro", "LEFT", "MoveLeft");
+		button = webiopi().createMacroButton("macro", "<", "MoveLeft");
 		$("#middle").append(button);
 
-		button = webiopi().createMacroButton("macro", "STOP", "Stop");
+		button = webiopi().createMacroButton("macro", "O", "Stop");
 		$("#middle").append(button);
 
-		button = webiopi().createMacroButton("macro", "RIGHT", "MoveRight");
+		button = webiopi().createMacroButton("macro", ">", "MoveRight");
 		$("#middle").append(button);
 
-		button = webiopi().createMacroButton("macro", "FORWARD", "MoveForward");
+		button = webiopi().createMacroButton("macro", "+", "MoveForward");
 		$("#up").append(button);
 
-		button = webiopi().createMacroButton("macro", "BACKWARD", "MoveBackward");
+		button = webiopi().createMacroButton("macro", "-", "MoveBackward");
 		$("#down").append(button);
 
 		webiopi().refreshGPIO(true);
@@ -31,9 +31,9 @@
 	</script>
 	<style type="text/css">
 		button {
-			display: block;
+			// display: block;
 			margin: 5px 5px 5px 5px;
-			width: 200px;
+			width: 45px;
 			height: 45px;
 			font-size: 24pt;
 			font-weight: bold;
