@@ -45,7 +45,6 @@ prompt = "WebIOPi"
 # Use welcome-file to change the default "Welcome" file
 #welcome-file = index.html
 
-doc-root = /usr/share/webiopi/htdocs/app/rccar-control
 
 #------------------------------------------------------------------------#
 
